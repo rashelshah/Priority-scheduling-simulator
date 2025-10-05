@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 230 35% 12%;
+    --foreground: 220 25% 95%;
+
+    --card: 230 30% 16%;
+    --card-foreground: 220 25% 95%;
+
+    --popover: 230 30% 16%;
+    --popover-foreground: 220 25% 95%;
+
+    --primary: 245 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 60% 70%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 230 25% 20%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 200 80% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 25% 25%;
+    --input: 230 25% 22%;
+    --ring: 245 70% 65%;
+
+    --radius: 0.75rem;
+
+    /* Process colors - vibrant on dark */
+    --process-1: 340 85% 60%;
+    --process-2: 200 80% 55%;
+    --process-3: 150 75% 50%;
+    --process-4: 40 85% 60%;
+    --process-5: 280 85% 60%;
+
+    /* Gradient backgrounds - dark theme */
+    --gradient-primary: linear-gradient(135deg, hsl(230 40% 10%) 0%, hsl(245 35% 15%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(230 30% 16% / 0.95) 0%, hsl(230 30% 14% / 0.9) 100%);
+    
+    /* Glass effect - dark */
+    --glass-bg: hsl(230 30% 16% / 0.8);
+    --glass-border: hsl(245 70% 65% / 0.2);
+    
+    /* Shadows */
+    --shadow-soft: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(245 70% 65% / 0.2);
+  }
+
+  .dark {
+    --background: 230 35% 12%;
+    --foreground: 220 25% 95%;
+
+    --card: 230 30% 16%;
+    --card-foreground: 220 25% 95%;
+
+    --popover: 230 30% 16%;
+    --popover-foreground: 220 25% 95%;
+
+    --primary: 245 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 60% 70%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 230 25% 20%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 200 80% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 25% 25%;
+    --input: 230 25% 22%;
+    --ring: 245 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-primary);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .process-1-bg {
+    background-color: hsl(var(--process-1));
+  }
+  
+  .process-2-bg {
+    background-color: hsl(var(--process-2));
+  }
+  
+  .process-3-bg {
+    background-color: hsl(var(--process-3));
+  }
+  
+  .process-4-bg {
+    background-color: hsl(var(--process-4));
+  }
+  
+  .process-5-bg {
+    background-color: hsl(var(--process-5));
+  }
+}
